@@ -1,6 +1,6 @@
 # file_extension_replacer
 A simple python command line tool to remove or replace a file extension with another one.  
-The changes will be applied to every file in the selected directory and subdirectories by default.
+The changes will be applied to every file in the selected directory and subdirectories too by default.
 ## Usage
 ```
 file_extension_replacer root oExt nExt
