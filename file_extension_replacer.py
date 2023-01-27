@@ -7,7 +7,7 @@ options_description = {"-s" : "Disables the execution in the subdirectories", "-
 
 help_text = "File Extension Replacer\nusage: " + sys.argv[0] + " [OPTIONS] root oExt nExt\n\
 This utility replaces a chosen file extension with a new one.\n\
-The utility does so on all files in the selected directory, SUBDIRECTORIES INCLUDED.\n\
+The utility does so on all files in the selected directory, SUBDIRECTORIES INCLUDED by default.\n\
 Arguments meaning:\n\
  root	The path to the folder where this program will be executed (insert \".\" to use the current working directory)\n\
  oExt	The file extension to delete (e.g., \".txt\")\n\
