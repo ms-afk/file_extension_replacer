@@ -7,7 +7,7 @@ file_extension_replacer root oExt nExt
 ```
 Arguments meaning:
 + **root** The path to the folder where this program will be executed (insert \".\" to use the current working directory)\n\
-+ **oExt** The file extension to delete (e.g., \".txt\")\n\
++ **oExt** The file extension to delete (e.g., \".txt\"; use "" to select every file found)\n\
 + **nExt** The file extension to replace the old one with (use \"\" to simply remove the files extension)"
 + **-s**  Disables the execution in the subdirectories
 + **-h** Displays the help menu
