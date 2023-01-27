@@ -10,7 +10,7 @@ This utility replaces a chosen file extension with a new one.\n\
 The utility does so on all files in the selected directory, SUBDIRECTORIES INCLUDED by default.\n\
 Arguments meaning:\n\
  root	The path to the folder where this program will be executed (insert \".\" to use the current working directory)\n\
- oExt	The file extension to delete (e.g., \".txt\")\n\
+ oExt	The file extension to delete (e.g., \".txt\"; use "" to select every file found)\n\
  nExt	The file extension to replace the old one with (use \"\" to simply remove the files extension)\n\
 Options:"
 
