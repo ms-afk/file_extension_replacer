@@ -3,11 +3,11 @@ import os, sys
 
 #help menu
 
-options_description = {"-s" : "Disables the execution in the subdirectories", "-h" : "Shows this help menu", "--help" : "Shows this help menu"}
+options_description = {"-r" : "Runs the program recursively (in the subdirectories too)", "-h" : "Shows this help menu", "--help" : "Shows this help menu"}
 
 help_text = "File Extension Replacer\nusage: " + sys.argv[0] + " [OPTIONS] root oExt nExt\n\
 This utility replaces a chosen file extension with a new one.\n\
-The utility does so on all files in the selected directory, SUBDIRECTORIES INCLUDED by default.\n\
+The utility does so on all files in the selected directory, subdirectories excluded by default.\n\
 Arguments meaning:\n\
  root	The path to the folder where this program will be executed (insert \".\" to use the current working directory)\n\
  oExt	The file extension to delete (e.g., \".txt\"; use "" to select every file found)\n\
@@ -48,6 +48,6 @@ for dirpath, dirnames, filenames in os.walk(root, topdown=True):
 			new_filename = filename.removesuffix(old_extension) + new_extension
 			new_full_path = os.path.join(dirpath, new_filename)
 			os.rename(full_path, new_full_path)
-	if "-s" in options:
-		#don't continue in subdirectories
+	if not "-r" in options:
+		#don't continue in the subdirectories if it's not requested
 		break
