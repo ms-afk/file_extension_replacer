@@ -12,5 +12,6 @@ Arguments meaning:
 
 Options meaning:
 + **-r** Runs the program recursively (in the subdirectories too)
++ **-v** Verbose execution: prints additional informations
 + **-h** Displays the help menu
 + **--help** Displays the help menu

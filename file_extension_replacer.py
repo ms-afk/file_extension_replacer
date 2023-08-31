@@ -3,7 +3,7 @@ import os, sys
 
 #help menu
 
-options_description = {"-r" : "Runs the program recursively (in the subdirectories too)", "-h" : "Shows this help menu", "--help" : "Shows this help menu"}
+options_description = {"-r" : "Runs the program recursively (in the subdirectories too)", "-v" : "Verbose execution: prints additional informations", "-h" : "Shows this help menu", "--help" : "Shows this help menu"}
 
 help_text = "File Extension Replacer\nusage: " + sys.argv[0] + " [OPTIONS] root oExt nExt\n\
 This utility replaces a chosen file extension with a new one.\n\
@@ -42,12 +42,19 @@ if len(arguments) != 3:
 root, old_extension, new_extension = arguments
 
 for dirpath, dirnames, filenames in os.walk(root, topdown=True):
+	if "-v" in options:
+		print("Entering directory '" + dirpath + "'")
 	for filename in filenames:
 		if filename.endswith(old_extension):
+			if "-v" in options:
+        			print("Replacing file '" + filename + "'")
 			full_path = os.path.join(dirpath, filename)
 			new_filename = filename.removesuffix(old_extension) + new_extension
 			new_full_path = os.path.join(dirpath, new_filename)
-			os.rename(full_path, new_full_path)
+			try:
+				os.rename(full_path, new_full_path)
+			except FileExistsError:
+				print("Warning: skipping file '" + new_full_path + "' because a file or directory with the same name already exists")
 	if not "-r" in options:
 		#don't continue in the subdirectories if it's not requested
 		break
